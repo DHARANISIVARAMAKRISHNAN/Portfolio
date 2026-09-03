@@ -854,6 +854,46 @@
         }
 
         /* =========================
+           CERTIFICATE BUTTON
+        ========================== */
+
+        .certificate-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            width: 100%;
+
+            padding: 12px 18px;
+
+            margin-top: 4px;
+
+            border-radius: 12px;
+
+            background: var(--gradient);
+            color: white;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            box-shadow: 0 8px 20px var(--glow);
+
+            transition: all 0.3s ease;
+        }
+
+        .certificate-link:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 25px rgba(124, 92, 255, 0.35);
+        }
+
+        .certificate-link i {
+            font-size: 15px;
+        }
+
+        /* =========================
            RESEARCH PUBLICATION
         ========================== */
 
@@ -945,6 +985,12 @@
         .publication-detail strong {
             color: #e2e8f0;
             font-size: 14px;
+        }
+
+        .publication-card .certificate-link {
+            width: fit-content;
+            min-width: 230px;
+            margin-top: 28px;
         }
 
         /* =========================
@@ -1193,6 +1239,10 @@
             .projects-grid,
             .certifications-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .publication-card .certificate-link {
+                width: 100%;
             }
         }
 
@@ -1917,6 +1967,20 @@
                 </div>
 
 
+                <!-- CORIZO CERTIFICATE LINK -->
+
+                <a href="Corizo%20certificate%201745035702293.pdf"
+                   target="_blank"
+                   rel="noopener"
+                   class="certificate-link">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    View Internship Certificate
+
+                </a>
+
+
                 <div class="tech-tags">
 
                     <span class="tag">Android App Development</span>
@@ -1979,6 +2043,20 @@
                     </p>
 
                 </div>
+
+
+                <!-- NPTEL CERTIFICATE LINK -->
+
+                <a href="NPTEL%20DHARANI%20SIVARAMAKRISHNAN.pdf"
+                   target="_blank"
+                   rel="noopener"
+                   class="certificate-link">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    View NPTEL Certificate
+
+                </a>
 
 
                 <div class="tech-tags">
@@ -2123,6 +2201,20 @@
                 </div>
 
             </div>
+
+
+            <!-- JOURNAL CERTIFICATE LINK -->
+
+            <a href="StaySecure%20journal%20paper%20certificate.pdf"
+               target="_blank"
+               rel="noopener"
+               class="certificate-link">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                View Journal Certificate
+
+            </a>
 
         </div>
 
