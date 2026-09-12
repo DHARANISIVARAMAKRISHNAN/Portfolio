@@ -996,6 +996,201 @@
 
 
         /* ================================
+           QUICK CONTACT CARD (HERO)
+        ================================= */
+
+        .quick-contact-card {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 26px;
+
+            padding: 18px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+        }
+
+        .quick-contact-card a {
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 9px 14px;
+
+            border-radius: 12px;
+
+            background: rgba(255, 255, 255, 0.03);
+
+            border: 1px solid var(--border);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .quick-contact-card a:hover {
+            border-color: var(--accent2);
+
+            color: var(--accent2);
+
+            transform: translateY(-2px);
+        }
+
+        .quick-contact-card a i {
+            color: var(--accent2);
+
+            font-size: 15px;
+        }
+
+        @media (max-width: 900px) {
+
+            .quick-contact-card {
+                justify-content: center;
+            }
+
+        }
+
+
+        /* ================================
+           FLOATING CONTACT BUTTON
+        ================================= */
+
+        .float-contact {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            z-index: 1200;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-end;
+
+            gap: 12px;
+        }
+
+        .float-menu {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            opacity: 0;
+
+            transform: translateY(10px) scale(0.95);
+
+            pointer-events: none;
+
+            transition: 0.25s ease;
+        }
+
+        .float-contact.open .float-menu {
+            opacity: 1;
+
+            transform: translateY(0) scale(1);
+
+            pointer-events: auto;
+        }
+
+        .float-menu a {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 10px 16px;
+
+            border-radius: 30px;
+
+            background: var(--bg-light);
+
+            border: 1px solid var(--border);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+            transition: 0.3s;
+        }
+
+        .float-menu a:hover {
+            border-color: var(--accent2);
+
+            color: var(--accent2);
+
+            transform: translateX(-3px);
+        }
+
+        .float-menu a i {
+            font-size: 15px;
+
+            width: 18px;
+
+            text-align: center;
+
+            color: var(--accent2);
+        }
+
+        .float-toggle {
+            width: 58px;
+            height: 58px;
+
+            border-radius: 50%;
+
+            background: var(--gradient);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            font-size: 22px;
+
+            border: none;
+
+            cursor: pointer;
+
+            box-shadow: 0 15px 35px rgba(124, 92, 255, 0.4);
+
+            transition: 0.3s;
+        }
+
+        .float-toggle:hover {
+            transform: scale(1.07);
+        }
+
+        .float-toggle i {
+            transition: 0.3s;
+        }
+
+        .float-contact.open .float-toggle i {
+            transform: rotate(135deg);
+        }
+
+
+        /* ================================
            FOOTER
         ================================= */
 
@@ -1259,6 +1454,23 @@
 
                         <i class="fa-regular fa-envelope"></i>
 
+                    </a>
+
+                </div>
+
+
+                <!-- QUICK CONTACT -->
+
+                <div class="quick-contact-card">
+
+                    <a href="mailto:dharanisivarmakrishnan00@gmail.com">
+                        <i class="fa-regular fa-envelope"></i>
+                        dharanisivarmakrishnan00@gmail.com
+                    </a>
+
+                    <a href="tel:+916379313516">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 63793 13516
                     </a>
 
                 </div>
@@ -2279,6 +2491,51 @@
         . Built with clean code.
 
     </footer>
+
+
+    <!-- =================================
+         FLOATING CONTACT BUTTON
+    ================================= -->
+
+    <div class="float-contact" id="floatContact">
+
+        <div class="float-menu">
+
+            <a href="tel:+916379313516">
+                <i class="fa-solid fa-phone"></i>
+                Call
+            </a>
+
+            <a href="mailto:dharanisivarmakrishnan00@gmail.com">
+                <i class="fa-regular fa-envelope"></i>
+                Email
+            </a>
+
+        </div>
+
+        <button class="float-toggle" id="floatToggle" aria-label="Contact options">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+
+    </div>
+
+
+    <script>
+
+        const floatContact = document.getElementById('floatContact');
+        const floatToggle = document.getElementById('floatToggle');
+
+        floatToggle.addEventListener('click', () => {
+            floatContact.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!floatContact.contains(e.target)) {
+                floatContact.classList.remove('open');
+            }
+        });
+
+    </script>
 
 
 </body>
